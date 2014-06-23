@@ -5,6 +5,7 @@ package com.prowidesoftware.swift.samples;
 
 import java.util.Calendar;
 
+import com.prowidesoftware.swift.io.parser.SwiftParser;
 import com.prowidesoftware.swift.model.SwiftMessage;
 import com.prowidesoftware.swift.model.field.Field20;
 import com.prowidesoftware.swift.model.field.Field23B;
@@ -25,7 +26,7 @@ public class MessageCreationExample {
 	/**
 	 * This example creates a new MT103 using MT and Field helper classes.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws  Exception {
 		/*
 		 * Create the MT class, it will be initialized as an outgoing message with normal priority
 		 */
@@ -93,5 +94,7 @@ public class MessageCreationExample {
 		 * -}
 		 * 
 		 */
+
+        new SwiftParser(m.FIN()).message();
 	}
 }

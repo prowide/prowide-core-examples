@@ -48,7 +48,10 @@ public class MessageCreation2Example {
 		 */
 		m.setSender("FOOSEDR0AXXX");
 		m.setReceiver("FOORECV0XXXX");
-		
+
+        // Set the message type on the model message passed in constructor
+        m.getSwiftMessage().getBlock2().setMessageType("103");
+
 		/*
 		 * Start adding the message's fields in correct order, starting with general information sequence
 		 */
@@ -162,6 +165,8 @@ public class MessageCreation2Example {
 		 * -}
 		 * 
 		 */
+
+        // Check the created message is parsaeble, notice it does not imply it is valid
         new SwiftParser(m.FIN()).message();
 	}
 }

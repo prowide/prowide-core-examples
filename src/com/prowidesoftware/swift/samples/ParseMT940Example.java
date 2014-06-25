@@ -9,7 +9,6 @@ import com.prowidesoftware.swift.model.field.Field20;
 import com.prowidesoftware.swift.model.field.Field32A;
 import com.prowidesoftware.swift.model.mt.mt1xx.MT103;
 import com.prowidesoftware.swift.model.mt.mt9xx.MT940;
-import com.sun.java_cup.internal.parser;
 
 import java.io.FileReader;
 import java.io.IOException;

@@ -1,12 +1,7 @@
 out
+build
 *.class
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.war
-*.ear
 .idea/workspace.xml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml

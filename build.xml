@@ -10,7 +10,7 @@
 	</path>
 	<target name="init">
 		<mkdir dir="${classes.dir}" />
-		<copy includeemptydirs="false" todir="bin">
+		<copy includeemptydirs="false" todir="${classes.dir}">
 			<fileset dir="src">
 				<exclude name="**/*.java" />
 			</fileset>

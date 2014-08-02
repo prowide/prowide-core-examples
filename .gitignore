@@ -1,6 +1,7 @@
 out
 build
 *.class
+/html/
 
 .idea/workspace.xml
 

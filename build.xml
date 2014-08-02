@@ -50,4 +50,16 @@
 		</junitreport>
 		<echo>junit report written to ${junit.output.dir}/index.html</echo>
 	</target>
+
+	<target name="java2html">
+		<taskdef name="java2html" classname="com.java2html.Java2HTMLTask">
+			<classpath>
+				<pathelement location="${basedir}/java2html/j2h.jar"/>
+			</classpath>
+		</taskdef>
+		<mkdir dir="${basedir}/html"/>
+		<java2html destination="${basedir}/html">
+			<fileset dir="${basedir}/src" includes="**/*.java"/>
+		</java2html>
+	</target>
 </project>

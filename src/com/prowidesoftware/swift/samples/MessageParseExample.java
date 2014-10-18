@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 
 import com.prowidesoftware.swift.io.parser.SwiftParser;
+import com.prowidesoftware.swift.model.MtSwiftMessage;
 import com.prowidesoftware.swift.model.SwiftMessage;
 import com.prowidesoftware.swift.model.field.Field32A;
 import com.prowidesoftware.swift.model.mt.mt1xx.MT103;
@@ -42,6 +43,7 @@ public class MessageParseExample {
 		 * Printout several parts of the message's content.
 		 */
 		MT103 mt = new MT103(msg);
+		
 		System.out.println("Sender: "+mt.getSender());
 		System.out.println("Receiver: "+mt.getReceiver());
 		System.out.println("Reference: "+mt.getField20().getValue());

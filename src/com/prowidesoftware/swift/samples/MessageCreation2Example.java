@@ -94,9 +94,9 @@ public class MessageCreation2Example {
 	 * Add a field using comprehensive setters API, will use it later inside
 	 * sequence A
 	 */
-	Field98A f98A = new Field98A();
-	f98A.setQualifier("PREP");
-	f98A.setDate(Calendar.getInstance());
+	Field98A f98A = new Field98A()
+		.setQualifier("PREP")
+		.setDate(Calendar.getInstance());
 
 	/*
 	 * Start adding the message's fields in correct order, starting with

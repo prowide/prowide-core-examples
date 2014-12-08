@@ -158,8 +158,7 @@ public class MessageCreation2Example {
 	 */
 	System.out.println(m.FIN());
 
-	// Check the created message is parsed correctly, notice it does not
-	// imply it is valid
+	// Check the created message can be parsed, notice it does not imply it is valid
 	new SwiftParser(m.FIN()).message();
     }
 }

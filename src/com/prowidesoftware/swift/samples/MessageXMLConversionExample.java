@@ -3,10 +3,7 @@
  */
 package com.prowidesoftware.swift.samples;
 
-import java.io.StringWriter;
-
 import com.prowidesoftware.swift.io.ConversionService;
-import com.prowidesoftware.swift.io.writer.XMLWriterVisitor;
 
 /**
  * Example of message conversion to XML representation.

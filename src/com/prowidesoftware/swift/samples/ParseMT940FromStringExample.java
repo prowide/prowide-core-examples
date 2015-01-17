@@ -1,28 +1,27 @@
 /*
- * Copyright (c) http://www.prowidesoftware.com/, 2013. All rights reserved.
+ * Copyright (c) http://www.prowidesoftware.com/, 2014. All rights reserved.
  */
 package com.prowidesoftware.swift.samples;
 
 import java.io.IOException;
-import java.io.StringReader;
 
-import com.prowidesoftware.swift.io.parser.SwiftParser;
-import com.prowidesoftware.swift.model.SwiftMessage;
 import com.prowidesoftware.swift.model.field.Field20;
 import com.prowidesoftware.swift.model.mt.mt9xx.MT940;
 
 /**
- * Example of parsing an MT 940
- *
+ * This example shows how to read a SWIFT MT message from a file, in the context where
+ * the message type to parse is already known, in the example we use an MT 103.
+ * 
  * @author www.prowidesoftware.com
+ * @since 7.7
  */
-public class ParseMT940Example {
+public class ParseMT940FromStringExample {
 
 	public static void main(String[] args) throws IOException {
         /*
-         * The message we'll parse as a plain string for simplicity
+         * A simple String containing the message content to parse
          */
-        String mtString  = "{1:F01AAAABB99BSMK3513951576}"+
+        String msg  = "{1:F01AAAABB99BSMK3513951576}"+
                 "{2:O9400934081223BBBBAA33XXXX03592332770812230834N}" +
                 "{4:\n"+
                 ":20:0112230000000890\n"+
@@ -41,26 +40,20 @@ public class ParseMT940Example {
                 ":86:INVOICE NR. 6000012801 \n" +
                 "ORDPRTY : ABC DO BRASIL LTDA RUA LIBERO BADARO,293-SAO \n" +
                 "PAULO BRAZIL }";
-		/*
-		 *  Create an instance of the SWIFT parser
+        /*
+		 * Parse the String content into a SWIFT message object
 		 */
-		SwiftParser parser = new SwiftParser();
+		MT940 mt = MT940.parse(msg);
+		
 		/*
-		 * feed the parser with the MT String we want to parse
+		 * Print header information
 		 */
-		parser.setReader(new StringReader(mtString));
-		/*
-		 * Actually parse the file and create a java object model from the message
-		 */
-		SwiftMessage msg = parser.message();
-		/*
-		 * msg contains java object from parsed message.
-		 * Printout several parts of the message's content.
-		 */
-		MT940 mt = new MT940(msg);
 		System.out.println("Sender: "+mt.getSender());
 		System.out.println("Receiver: "+mt.getReceiver());
-		System.out.println("Reference: "+mt.getField20().getValue());
+		
+		/*
+		 * Print details of a specific field
+		 */
 		Field20 f = mt.getField20();
 		System.out.println("Field 20 Reference: "+f.getReference());
 	}

@@ -1,7 +1,7 @@
 /*
  * Copyright (c) http://www.prowidesoftware.com/, 2013. All rights reserved.
  */
-package com.prowidesoftware.swift.samples;
+package com.prowidesoftware.swift.samples.core;
 
 import com.prowidesoftware.swift.io.ConversionService;
 
@@ -99,8 +99,10 @@ public class MessageRichXMLConversionExample {
 		        + ":20:0061350113089908\n" + ":13C:/RNCTIME/1534+0000\n" + ":23B:CRED\n" + ":23E:SDVA\n" + ":72:/BNF/TRANSF. BCO. FOO\n"
 		        + "-}{5:{MAC:88B4F929}{CHK:22EF370A4073}}\n" + "\n";
 	
-		// This will switch on a more detailed output in the xml, ideal for
-		// processing elements inside each tag
+		/*
+		 *  This will switch on a more detailed output in the xml, ideal for
+		 *  processing elements inside each tag
+		 */
 		boolean useFieldInsteadOfTag = true;
 		String xml = srv.getXml(fin, useFieldInsteadOfTag);
 		System.out.println(xml);

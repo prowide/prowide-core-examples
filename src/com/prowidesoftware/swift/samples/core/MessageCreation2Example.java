@@ -1,7 +1,7 @@
 /*
  * Copyright (c) http://www.prowidesoftware.com/, 2014. All rights reserved.
  */
-package com.prowidesoftware.swift.samples;
+package com.prowidesoftware.swift.samples.core;
 
 import java.util.Calendar;
 

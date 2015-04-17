@@ -1,7 +1,7 @@
 /*
  * Copyright (c) http://www.prowidesoftware.com/, 2013. All rights reserved.
  */
-package com.prowidesoftware.swift.samples;
+package com.prowidesoftware.swift.samples.core;
 
 import java.io.IOException;
 import java.io.StringWriter;

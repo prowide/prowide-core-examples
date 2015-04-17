@@ -1,4 +1,4 @@
 prowide-core-examples
 =====================
 
-Source code examples for Prowidesoftware core library for SWIFT messages
+Source code examples for Prowide Software Core library for SWIFT messages

@@ -6,6 +6,7 @@ package com.prowidesoftware.swift.samples.core;
 import java.io.IOException;
 
 import com.prowidesoftware.swift.model.field.Field20;
+import com.prowidesoftware.swift.model.field.Field61;
 import com.prowidesoftware.swift.model.mt.mt9xx.MT940;
 
 /**
@@ -56,5 +57,12 @@ public class ParseMT940FromStringExample {
 		 */
 		Field20 f = mt.getField20();
 		System.out.println("Field 20 Reference: "+f.getReference());
+		
+		for (Field61 tx : mt.getField61()) {
+			System.out.println("Amount: "+tx.getComponent(Field61.AMOUNT));
+			System.out.println("Transaction Type: "+tx.getComponent(Field61.TRANSACTION_TYPE));
+			System.out.println("Identification: "+tx.getComponent(Field61.IDENTIFICATION_CODE));
+			System.out.println("Reference Acc Owner: "+tx.getComponent(Field61.REFERENCE_FOR_THE_ACCOUNT_OWNER));
+		}
 	}
 }

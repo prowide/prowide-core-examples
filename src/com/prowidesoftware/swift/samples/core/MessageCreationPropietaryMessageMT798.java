@@ -26,7 +26,7 @@ import com.prowidesoftware.swift.model.mt.mt7xx.MT798;
 </pre>
  * 
  * @author www@prowidesoftware.com
- *
+ * @since 7.7
  */
 public class MessageCreationPropietaryMessageMT798 {
     

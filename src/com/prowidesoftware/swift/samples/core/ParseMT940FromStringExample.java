@@ -13,6 +13,19 @@ import com.prowidesoftware.swift.model.mt.mt9xx.MT940;
  * This example shows how to read a SWIFT MT message from a String, in the context where
  * the message type to parse is already known, in the example we use an MT 940.
  * 
+ * Running this program produces the following output:
+<pre>
+Sender: BBBBAA33XXXX
+Receiver: AAAABB99BSMK
+Sender's Reference: 0112230000000890
+Amount: 110,92
+Transaction Type: NDIV
+Reference Acc Owner: NONREF
+Amount: 3519,76
+Transaction Type: NTRF
+Reference Acc Owner: 50RS201403240008
+</pre>
+ * 
  * @author www.prowidesoftware.com
  * @since 7.7
  */
@@ -56,7 +69,7 @@ public class ParseMT940FromStringExample {
 		 * Print details of a specific field
 		 */
 		Field20 f = mt.getField20();
-		System.out.println("Field 20 Reference: "+f.getReference());
+		System.out.println(f.getLabel() + ": "+f.getReference());
 		
 		for (Field61 tx : mt.getField61()) {
 			System.out.println("Amount: "+tx.getComponent(Field61.AMOUNT));

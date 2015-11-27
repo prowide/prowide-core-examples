@@ -12,8 +12,26 @@ import com.prowidesoftware.swift.model.mt.mt7xx.MT798;
  * This example shows how to read a proprietary SWIFT MT message from a String.
  * In the example we use an MT 798 with an inner MT 700.
  * 
- * @author www.prowidesoftware.com
+ * Running this program produces the following output:
+<pre>
+Sender: PTSAUSDDXXXX
+Receiver: PTSAUSDDXXXX
+Sender's Reference: FOOI102794-02
+
+MT 700:
+27A: 2/2
+21A: AA2015-99
+27: 1/1
+40A: IRREVOCABLE
+20: FOOI102794
+31C: 150827
+
+MT 700:
+Related Sequence Reference: AA2015-99
+</pre>
  * 
+ * @author www.prowidesoftware.com
+ * @since 7.7
  */
 public class ParseProprietaryMessageMT798 {
 	public static void main(String[] args) throws IOException {

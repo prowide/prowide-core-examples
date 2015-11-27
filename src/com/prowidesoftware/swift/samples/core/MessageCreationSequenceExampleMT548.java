@@ -5,6 +5,14 @@ import com.prowidesoftware.swift.model.field.Field20C;
 import com.prowidesoftware.swift.model.field.Field23G;
 import com.prowidesoftware.swift.model.mt.mt5xx.MT548;
 
+/**
+ * Example of message creation using a specific MTnnn class, the Sequences API and
+ * nested subsequences. 
+ * A partial MT548 is created, including a sequence A with inner sequences A1 and A2. 
+ * 
+ * @author www@prowidesoftware.com
+ *
+ */
 public class MessageCreationSequenceExampleMT548 {
 
 	public static void main(String[] args) {
@@ -20,7 +28,6 @@ public class MessageCreationSequenceExampleMT548 {
 					.append(MT548.SequenceA2.newInstance(
 							// Sequence A2 contents here
 							))
-				
 				));
 	}
 }

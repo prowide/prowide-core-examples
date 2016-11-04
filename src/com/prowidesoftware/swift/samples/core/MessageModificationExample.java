@@ -90,7 +90,7 @@ public class MessageModificationExample {
 		 * First we get current field and just change the date, notice the read
 		 * Field instance is a detached object, changing it does not modify
 		 * the actual message.
-		 * Then use the detached modify field to update the current Tag
+		 * Then use the detached modified field to update the current Tag
 		 * value in the underlying message
 		 */
 		Field32A field32A = mt.getField32A().setComponent1(Calendar.getInstance());

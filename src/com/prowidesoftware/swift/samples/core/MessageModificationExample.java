@@ -39,6 +39,14 @@ import com.prowidesoftware.swift.model.mt.mt1xx.MT103;
 :57A:/12345
 </pre>
  *
+ * <p>For more information of the underlying generic message model check: 
+ * http://api.prowidesoftware.com/core/com/prowidesoftware/swift/model/SwiftMessage.html
+ * </p>
+ * 
+ * <p>For detailed available API to retrieve and alter content in the text block of MT messages, check:
+ * http://api.prowidesoftware.com/core/com/prowidesoftware/swift/model/SwiftTagListBlock.html
+ * </p>
+ * 
  * @author www.prowidesoftware.com
  * 
  */

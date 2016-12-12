@@ -20,6 +20,7 @@ import java.io.IOException;
 
 import com.prowidesoftware.swift.io.parser.SwiftParser;
 import com.prowidesoftware.swift.model.SwiftMessage;
+import com.prowidesoftware.swift.model.Tag;
 import com.prowidesoftware.swift.model.mt.mt1xx.MT103;
 
 /**
@@ -36,15 +37,20 @@ public class ParseUnknownMessageFromFileExample {
 		/*
 		 * Read the file and create an instance of the generic parser for it
 		 */
-		File file = new File("src/mt103.txt");
+		File file = new File("src/system.txt");
 		SwiftParser parser = new SwiftParser(new FileInputStream(file));		
 		SwiftMessage msg = parser.message();
 
 		if (msg.isSystemMessage()) {
+			System.out.println("System Message");
 			/*
 			 * deal with system message
 			 */
-			msg.getBlock4().getTagByName("TAGNAME");
+			Tag t = msg.getBlock4().getTagByName("177");
+			if (t != null) {
+				System.out.println(t.getValue());
+			}
+			
 		} else {
 			/*
 			 * specialize message as necessary depending on message type

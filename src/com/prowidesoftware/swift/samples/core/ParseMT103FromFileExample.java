@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
+import com.prowidesoftware.swift.model.field.Field;
 import com.prowidesoftware.swift.model.field.Field20;
 import com.prowidesoftware.swift.model.field.Field32A;
 import com.prowidesoftware.swift.model.mt.mt1xx.MT103;
@@ -56,7 +57,7 @@ public class ParseMT103FromFileExample {
 		 * Print details of a specific fields
 		 */
 		Field20 ref = mt.getField20();
-		System.out.println(ref.getLabel() + ": " + ref.getComponent(Field20.REFERENCE));
+		System.out.println(Field.getLabel(ref.getName(), mt.getMessageType(), null) + ": " + ref.getComponent(Field20.REFERENCE));
 
 		Field32A f = mt.getField32A();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");

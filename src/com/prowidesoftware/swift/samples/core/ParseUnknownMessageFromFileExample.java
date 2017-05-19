@@ -41,7 +41,7 @@ public class ParseUnknownMessageFromFileExample {
 		SwiftParser parser = new SwiftParser(new FileInputStream(file));		
 		SwiftMessage msg = parser.message();
 
-		if (msg.isSystemMessage()) {
+		if (msg.isServiceMessage()) {
 			System.out.println("System Message");
 			/*
 			 * deal with system message

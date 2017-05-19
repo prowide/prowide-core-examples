@@ -16,6 +16,7 @@ package com.prowidesoftware.swift.samples.core;
 
 import java.io.IOException;
 
+import com.prowidesoftware.swift.model.field.Field;
 import com.prowidesoftware.swift.model.field.Field20;
 import com.prowidesoftware.swift.model.field.Field61;
 import com.prowidesoftware.swift.model.mt.mt9xx.MT940;
@@ -80,7 +81,7 @@ public class ParseMT940FromStringExample {
 		 * Print details of a specific field
 		 */
 		Field20 f = mt.getField20();
-		System.out.println(f.getLabel() + ": "+f.getReference());
+		System.out.println(Field.getLabel(f.getName(), mt.getMessageType(), null) + ": "+f.getReference());
 		
 		for (Field61 tx : mt.getField61()) {
 			System.out.println("Amount: "+tx.getComponent(Field61.AMOUNT));

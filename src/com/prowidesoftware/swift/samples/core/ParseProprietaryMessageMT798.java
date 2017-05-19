@@ -18,6 +18,7 @@ import java.io.IOException;
 
 import com.prowidesoftware.swift.model.SwiftTagListBlock;
 import com.prowidesoftware.swift.model.Tag;
+import com.prowidesoftware.swift.model.field.Field;
 import com.prowidesoftware.swift.model.field.Field20;
 import com.prowidesoftware.swift.model.field.Field21A;
 import com.prowidesoftware.swift.model.mt.mt7xx.MT798;
@@ -84,7 +85,7 @@ public class ParseProprietaryMessageMT798 {
 		 * Print details of a specific field
 		 */
 		Field20 f = mt.getField20();
-		System.out.println(f.getLabel() + ": " + f.getReference());
+		System.out.println(Field.getLabel(f.getName(), mt.getMessageType(), null) + ": " + f.getReference());
 
 		/*
 		 * Print fields from inner message.
@@ -108,6 +109,6 @@ public class ParseProprietaryMessageMT798 {
 		 */
 		System.out.println("\nMT 700:");
 		Field21A ref = (Field21A) block.getFieldByName("21A");
-		System.out.println(ref.getLabel() + ": " + ref.getComponent(Field21A.REFERENCE));
+		System.out.println(ref.getName() + ": " + ref.getComponent(Field21A.REFERENCE));
 	}
 }

@@ -16,30 +16,21 @@ package com.prowidesoftware.swift.samples.core;
 
 import java.io.IOException;
 
-import org.apache.commons.lang.StringUtils;
-
-import com.prowidesoftware.swift.io.parser.SwiftParser;
 import com.prowidesoftware.swift.model.SwiftMessage;
 import com.prowidesoftware.swift.model.mt.mt9xx.MT940;
 
 /**
- * There is a frequent misunderstanding of the FIN messages format when the actual message
- * is preceded by a system ACK, and the expected behavior of Prowide Core parser when reading
- * such messages.
- * <br />
- * By default the parser will get the first FIN message found in the file, leaving the
- * rest into the UnparsedTextList structure.
- * <br />
- * This is just fine when reading plain FIN messages, but when the message is preceded by
- * an acknowledge (system message) for example, it is the user responsibility to check the
- * type of message read and proceed accordingly, depending on the particular use case and
- * application needs.
- * <br />
- * System messages are identified by service id "21" in the header block. For more
- * information check <a href="http://www.prowidesoftware.com/about-SWIFT-MT.jsp">about SWIFT MT</a>
- * <br />
- * The following example will parse the FIN content, check for the service id, and if it is a 
- * system message it will then gather the actual MT from the unparsed content.
+ * There is a frequent misunderstanding of the FIN messages format when the actual message is preceded by a system ACK, and the expected behavior of Prowide Core parser when reading such messages.
+ * 
+ * By default the parser will get the first FIN message found in the file (the ACK service message), leaving the rest of the text into the UnparsedTextList structure.
+ * 
+ * This is just fine when reading plain user to user messages, but when the message is preceded by a service message as in the example, the resulting parsed object may not be the expected one.
+ * 
+ * When dealing with this scenario it is the user responsibility to check whether the message is a service message or not, and proceed accordingly, depending on the particular use case and application needs.
+ * 
+ * If you are trying to match and process the ACK/NAK notifications you may be interested on the service message. However if this is the way you receive the messages from the SWIFT interface and you need the actual user message following the ACK, then you have to do something else.
+ * 
+ * The following example will parse the FIN content, check for the service id, and if it is a system message it will then gather the actual MT from the unparsed content:
  * 
  * @author www.prowidesoftware.com
  * @since 7.7
@@ -61,11 +52,11 @@ public class ParseMessageWithAckExample {
 			":64:C160418USD1872,\n"+
 			"-}{5:{CHK:0FEC1E4AEC53}{TNG:}}{S:{COP:S}}";
 		
-		final SwiftParser parser = new SwiftParser();
-		SwiftMessage sm = parser.parse(fin);
-		if (StringUtils.equals(sm.getBlock1().getServiceId(), "21") && sm.getUnparsedTextsSize() > 0) {
-			sm = sm.getUnparsedTexts().getTextAsMessage(0);
+		SwiftMessage sm = SwiftMessage.parse(fin);
+		if (sm.isServiceMessage()) {
+			sm = SwiftMessage.parse(sm.getUnparsedTexts().getAsFINString());
 		}
+		//at this point the sm variable will contain the actual user to user message, regardless if it was preceded by and ACK.
 		
 		System.out.println("Message Type: "+ sm.getType());
 		if (sm.isType(940)) {

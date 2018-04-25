@@ -6,6 +6,7 @@ gradle.properties
 .idea
 *.iws
 *.iml
+*.ipr
 **/*.log
 .classpath
 .settings

@@ -10,3 +10,4 @@ gradle.properties
 **/inspectionProfiles/*
 **/*.log
 .classpath
+.settings

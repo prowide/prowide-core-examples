@@ -9,3 +9,4 @@ gradle.properties
 *.iml
 **/inspectionProfiles/*
 **/*.log
+.classpath

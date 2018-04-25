@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/prowide-core-examples.iml" filepath="$PROJECT_DIR$/.idea/modules/prowide-core-examples.iml" />
       <module fileurl="file://$PROJECT_DIR$/prowide-core-examples.iml" filepath="$PROJECT_DIR$/prowide-core-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/prowide-core-examples_main.iml" filepath="$PROJECT_DIR$/.idea/modules/prowide-core-examples_main.iml" group="prowide-core-examples" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/prowide-core-examples_test.iml" filepath="$PROJECT_DIR$/.idea/modules/prowide-core-examples_test.iml" group="prowide-core-examples" />
     </modules>
   </component>
 </project>
-

@@ -3,11 +3,9 @@
 **/out
 gradle.properties
 .gradle
-.idea/workspace.xml
-.idea/tasks.xml
+.idea
 *.iws
 *.iml
-**/inspectionProfiles/*
 **/*.log
 .classpath
 .settings

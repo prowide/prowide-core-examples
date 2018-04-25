@@ -1,0 +1,12 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.prowidesoftware', name: 'pw-swift-core', version: 'SRU2017-7.9.7'
+    //testImplementation 'junit:junit:4.12', 'xmlunit:xmlunit:1.6'
+}

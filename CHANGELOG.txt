@@ -1,0 +1,3 @@
+2018 April
+* Project migrated to Gradle
+* updated dependencies to latest Core release (7.9.7)

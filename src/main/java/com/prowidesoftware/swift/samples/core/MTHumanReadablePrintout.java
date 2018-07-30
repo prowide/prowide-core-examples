@@ -11,6 +11,8 @@ import java.util.Locale;
 /**
  * Example to generate a human friendly printout of an MT content
  *
+ * <p>https://stackoverflow.com/questions/47265944/generating-human-readable-swift-messages-using-prowide-core
+ *
  * @author sebastian
  */
 public class MTHumanReadablePrintout {

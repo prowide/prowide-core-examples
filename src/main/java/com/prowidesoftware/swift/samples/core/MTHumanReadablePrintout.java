@@ -3,7 +3,6 @@ package com.prowidesoftware.swift.samples.core;
 import com.prowidesoftware.swift.model.SwiftMessage;
 import com.prowidesoftware.swift.model.Tag;
 import com.prowidesoftware.swift.model.field.Field;
-import com.prowidesoftware.swift.model.mt.mt1xx.MT103;
 
 import java.io.IOException;
 import java.util.Locale;

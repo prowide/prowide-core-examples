@@ -1,3 +1,6 @@
+2019 October
+* Update to SRU2019-8.0.1
+
 2019 May
 * Update to 7.10.4
 

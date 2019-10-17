@@ -98,7 +98,7 @@ public class ParseMT940TransactionsExample {
 		for (int i=0; i<loop.size(); i++) {
 			Tag t = loop.getTag(i);
 			if (t.getName().equals("61")) {
-				Field61 tx = (Field61) t.getField();
+				Field61 tx = (Field61) t.asField();
 				System.out.println("---------------------------");
 				System.out.println("Amount: "+tx.getComponent(Field61.AMOUNT));
 				System.out.println("Transaction Type: "+tx.getComponent(Field61.TRANSACTION_TYPE));

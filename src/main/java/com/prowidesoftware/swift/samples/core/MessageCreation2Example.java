@@ -132,7 +132,7 @@ public class MessageCreation2Example {
 			Field98A.tag(":TRAD//20050714"), 
 			Field98A.tag(":SETT//20050719"), 
 			Field90B.tag(":DEAL//ACTU/EUR21,49"),
-		        Field35B.tag("ISIN FR1234567890" + FINWriterVisitor.SWIFT_EOL + "AXA UAP"), 
+		        new Field35B().setQualifier("ISIN").setISIN("FR1234567890").setDescription("AXA UAP").asTag(),
 		        Field70E.tag(":SPRO//4042")));
 	
 		/*
@@ -145,8 +145,8 @@ public class MessageCreation2Example {
 		/*
 		 * settlement details: sequence E
 		 */
-		m.append(MT542.SequenceE.START_TAG); // use constant of Tag that marks
-						     // start of sequence
+		// use constant of Tag that marks the start of sequence
+		m.append(MT542.SequenceE.START_TAG);
 	
 		m.append(Field22F.tag(":SETR//TRAD"));
 	
@@ -157,9 +157,9 @@ public class MessageCreation2Example {
 		m.append(MT542.SequenceE1.newInstance(Field95P.tag(":PSET//SICVFRPP")));
 	
 		m.append(MT542.SequenceE3.newInstance(Field19A.tag(":SETT//EUR123456,50")));
-	
-		m.append(MT542.SequenceE.END_TAG); // use constant of Tag that marks end
-						   // of sequence
+
+		// use constant of Tag that marks the end of sequence
+		m.append(MT542.SequenceE.END_TAG);
 	
 		m.append(new Field20("REFERENCE"));
 		m.append(new Field23B("CRED"));

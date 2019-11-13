@@ -39,8 +39,8 @@ public class ParseUnknownMessageFromFileExample {
 		 * Read the file and create an instance of the generic parser for it
 		 * Parse from File could also be used here
 		 */
-		SwiftParser parser = new SwiftParser(Lib.readResource("system.txt", null));
-		SwiftMessage msg = parser.message();
+		String content = Lib.readResource("system.txt");
+		SwiftMessage msg = SwiftMessage.parse(content);
 
 		if (msg.isServiceMessage()) {
 			System.out.println("System Message");

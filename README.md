@@ -10,3 +10,6 @@ For additional resources and documentation please check: http://www.prowidesoftw
 
 run "./gradlew eclipse" or "./gradlew idea" to generate your local IDE setup
 
+### Issues
+
+For Prowide Core API issues please use https://github.com/prowide/prowide-core/issues

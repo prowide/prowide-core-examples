@@ -7,6 +7,6 @@ repositories {
 }
 
 dependencies {
-    compile group: 'com.prowidesoftware', name: 'pw-swift-core', version: 'SRU2019-8.0.1'
+    compile group: 'com.prowidesoftware', name: 'pw-swift-core', version: 'SRU2020-9.1.2'
     //testImplementation 'junit:junit:4.12', 'xmlunit:xmlunit:1.6'
 }

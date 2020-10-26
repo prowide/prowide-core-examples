@@ -1,3 +1,6 @@
+2020 October
+* UPdate to SRU2020-9.1.2
+
 2019 October
 * Update to SRU2019-8.0.1
 

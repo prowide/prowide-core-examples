@@ -7,6 +7,6 @@ Comprehensive test cases can be found in the actual https://github.com/prowide/p
 
 For additional resources and documentation please check: http://www.prowidesoftware.com/resources
 
-
 run "./gradlew eclipse" or "./gradlew idea" to generate your local IDE setup
 
+Then use your IDE run option on any example class to see its output

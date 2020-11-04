@@ -27,7 +27,7 @@ import java.util.List;
  * This example shows how to create an MT940 daily statement from a couple of interim MT942 statements.
  * It can be use as general example of how to create a new message using data gather from other existing messages.
  */
-public class MT942ToMT940Example {
+public class MessageCreationMT942ToMT940Example {
 
 	public static void main(String[] args) {
 

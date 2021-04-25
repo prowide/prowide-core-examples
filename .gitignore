@@ -3,7 +3,6 @@
 **/out
 gradle.properties
 .gradle
-.idea
 *.iws
 *.iml
 *.ipr

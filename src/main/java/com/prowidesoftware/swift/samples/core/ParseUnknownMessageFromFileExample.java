@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,39 +29,39 @@ import java.io.IOException;
  */
 public class ParseUnknownMessageFromFileExample {
 
-	public static void main(String[] args) throws IOException {
-		/*
-		 * Read the file and create an instance of the generic parser for it
-		 * Parse from File could also be used here
-		 */
-		String content = Lib.readResource("system.txt");
-		SwiftMessage msg = SwiftMessage.parse(content);
+    public static void main(String[] args) throws IOException {
+        /*
+         * Read the file and create an instance of the generic parser for it
+         * Parse from File could also be used here
+         */
+        String content = Lib.readResource("system.txt");
+        SwiftMessage msg = SwiftMessage.parse(content);
 
-		if (msg.isServiceMessage()) {
-			System.out.println("System Message");
-			/*
-			 * deal with system message
-			 */
-			Tag t = msg.getBlock4().getTagByName("177");
-			if (t != null) {
-				System.out.println(t.getValue());
-			}
-			
-		} else {
-			/*
-			 * specialize message as necessary depending on message type
-			 */
-			if (msg.isType(103)) {
-				/*
-				 * Specialize the message to its specific model representation
-				 */
-				MT103 mt = new MT103(msg);
-				
-				/*
-				 * Print details of a specific field
-				 */
-				System.out.println("Reference: "+mt.getField20().getValue());
-			}
-		}
-	}
+        if (msg.isServiceMessage()) {
+            System.out.println("System Message");
+            /*
+             * deal with system message
+             */
+            Tag t = msg.getBlock4().getTagByName("177");
+            if (t != null) {
+                System.out.println(t.getValue());
+            }
+
+        } else {
+            /*
+             * specialize message as necessary depending on message type
+             */
+            if (msg.isType(103)) {
+                /*
+                 * Specialize the message to its specific model representation
+                 */
+                MT103 mt = new MT103(msg);
+
+                /*
+                 * Print details of a specific field
+                 */
+                System.out.println("Reference: " + mt.getField20().getValue());
+            }
+        }
+    }
 }

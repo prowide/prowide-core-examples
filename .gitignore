@@ -10,3 +10,11 @@ gradle.properties
 **/*.log
 .classpath
 .settings
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/prowide-core.iml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+.idea/workspace.xml

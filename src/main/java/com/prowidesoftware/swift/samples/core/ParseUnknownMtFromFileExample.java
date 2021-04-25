@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,30 +27,30 @@ import java.io.IOException;
  */
 public class ParseUnknownMtFromFileExample {
 
-	public static void main(String[] args) throws IOException {
-		/*
-		 * Read and parse the file content into a SWIFT message object
-		 * Parse from File could also be used here
-		 */
-		AbstractMT msg = AbstractMT.parse(Lib.readResource("mt103.txt", null));
-		
-		/*
-		 * Print header information
-		 */
-		System.out.println("Sender: "+msg.getSender());
-		System.out.println("Receiver: "+msg.getReceiver());
-		System.out.println("MT: "+msg.getMessageType());
+    public static void main(String[] args) throws IOException {
+        /*
+         * Read and parse the file content into a SWIFT message object
+         * Parse from File could also be used here
+         */
+        AbstractMT msg = AbstractMT.parse(Lib.readResource("mt103.txt", null));
 
-		if (msg.isType(103) && msg.getSwiftMessage().isSTP()) {
-			/*
-			 * Specialize the message to its specific model representation
-			 */
-			MT103_STP mt = (MT103_STP) msg;
-			
-			/*
-			 * Print details of a specific field
-			 */
-			System.out.println("Reference: "+mt.getField20().getValue());
-		}
-	}
+        /*
+         * Print header information
+         */
+        System.out.println("Sender: " + msg.getSender());
+        System.out.println("Receiver: " + msg.getReceiver());
+        System.out.println("MT: " + msg.getMessageType());
+
+        if (msg.isType(103) && msg.getSwiftMessage().isSTP()) {
+            /*
+             * Specialize the message to its specific model representation
+             */
+            MT103_STP mt = (MT103_STP) msg;
+
+            /*
+             * Print details of a specific field
+             */
+            System.out.println("Reference: " + mt.getField20().getValue());
+        }
+    }
 }

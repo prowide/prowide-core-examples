@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,38 +32,38 @@ public class WriteRJEFileExample {
      * This example creates a new MT103 using MT and Field helper classes.
      */
     public static void main(String[] args) throws Exception {
-		/*
-		 * Create a MT103 message.
-		 * 
-		 * Notice the message is not complete, partially created in this example.
-		 * Check the creation examples to see how to create messages.
-		 */
-		final MT103 m = new MT103();
-		m.setSender("FOOSEDR0AXXX");
-		m.setReceiver("FOORECV0XXXX");
-		m.addField(new Field20("REFERENCE"));
-		m.addField(new Field23B("CRED"));
-	
-		/*
-		 * Create the writer
-		 */
-		RJEWriter writer = new RJEWriter("/tmp/test.rje");
-		
-		/*
-		 * Write the message ito the file
-		 */
-		writer.write(m);
-		
-		/*
-		 * Add message again.
-		 * Notice RJE files support multiple messages. 
-		 * We add the same message twice just for the purpose of the example.
-		 */
-		writer.write(m);
+        /*
+         * Create a MT103 message.
+         *
+         * Notice the message is not complete, partially created in this example.
+         * Check the creation examples to see how to create messages.
+         */
+        final MT103 m = new MT103();
+        m.setSender("FOOSEDR0AXXX");
+        m.setReceiver("FOORECV0XXXX");
+        m.addField(new Field20("REFERENCE"));
+        m.addField(new Field23B("CRED"));
 
-		/*
-		 * Close the writer stream
-		 */
-		writer.close();
+        /*
+         * Create the writer
+         */
+        RJEWriter writer = new RJEWriter("/tmp/test.rje");
+
+        /*
+         * Write the message ito the file
+         */
+        writer.write(m);
+
+        /*
+         * Add message again.
+         * Notice RJE files support multiple messages.
+         * We add the same message twice just for the purpose of the example.
+         */
+        writer.write(m);
+
+        /*
+         * Close the writer stream
+         */
+        writer.close();
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2006-2020 Prowide
+ * Copyright 2006-2021 Prowide
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,57 +33,57 @@ import java.text.SimpleDateFormat;
  */
 public class ReadRJEFileExample {
 
-	public static void main(String[] args) throws IOException {
-		/*
-		 * Read and parse the file content into a SWIFT message object
-		 * Parse from File could also be used here
-		 */
-		RJEReader reader = new RJEReader(Lib.readResource("mt103.rje", null));
-		
-		/*
-		 * Iterate the reader
-		 */
-		while (reader.hasNext()) {
-			/*
-			 * Read the message. 
-			 */
-			//System.out.println(reader.next());
-			AbstractMT msg = reader.nextMT();
-			
-			if (msg.isType(103)) {
-				
-				/*
-				 * Specialize the message 
-				 */
-				MT103 mt = (MT103) msg;
-				
-				/*
-				 * Print some content from message
-				 * 
-				 * Expected output:
-				 * Sender: FOOTUS3NBXXX
-				 * Receiver: BICFOOYYAXXX
-				 * Reference: FDF0510141142100
-				 * Value Date: 2005/10/14
-				 * Amount: USD 1814,28
-				 * --------------------------
-				 * Sender: FOOBESMMAXXX
-				 * Receiver: BICFOOYYAXXX
-				 * Reference: INGDESMM
-				 * Value Date: 2005/10/28
-				 * Amount: EUR 111222,33
-				 * --------------------------
-				 */
-				System.out.println("Sender: "+mt.getSender());
-				System.out.println("Receiver: "+mt.getReceiver());
-				System.out.println("Reference: "+mt.getField20().getValue());
-				
-				Field32A f = mt.getField32A();
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-				System.out.println("Value Date: "+sdf.format(f.getDateAsCalendar().getTime()));
-				System.out.println("Amount: "+f.getCurrency()+" "+f.getAmount());
-				System.out.println("--------------------------");
-			}
-		}
-	}
+    public static void main(String[] args) throws IOException {
+        /*
+         * Read and parse the file content into a SWIFT message object
+         * Parse from File could also be used here
+         */
+        RJEReader reader = new RJEReader(Lib.readResource("mt103.rje", null));
+
+        /*
+         * Iterate the reader
+         */
+        while (reader.hasNext()) {
+            /*
+             * Read the message.
+             */
+            //System.out.println(reader.next());
+            AbstractMT msg = reader.nextMT();
+
+            if (msg.isType(103)) {
+
+                /*
+                 * Specialize the message
+                 */
+                MT103 mt = (MT103) msg;
+
+                /*
+                 * Print some content from message
+                 *
+                 * Expected output:
+                 * Sender: FOOTUS3NBXXX
+                 * Receiver: BICFOOYYAXXX
+                 * Reference: FDF0510141142100
+                 * Value Date: 2005/10/14
+                 * Amount: USD 1814,28
+                 * --------------------------
+                 * Sender: FOOBESMMAXXX
+                 * Receiver: BICFOOYYAXXX
+                 * Reference: INGDESMM
+                 * Value Date: 2005/10/28
+                 * Amount: EUR 111222,33
+                 * --------------------------
+                 */
+                System.out.println("Sender: " + mt.getSender());
+                System.out.println("Receiver: " + mt.getReceiver());
+                System.out.println("Reference: " + mt.getField20().getValue());
+
+                Field32A f = mt.getField32A();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+                System.out.println("Value Date: " + sdf.format(f.getDateAsCalendar().getTime()));
+                System.out.println("Amount: " + f.getCurrency() + " " + f.getAmount());
+                System.out.println("--------------------------");
+            }
+        }
+    }
 }

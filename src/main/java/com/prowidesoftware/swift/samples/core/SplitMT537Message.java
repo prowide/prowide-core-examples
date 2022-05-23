@@ -11,7 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * https://prowide.atlassian.net/browse/PROWIDE-790
+ * https://prowide.atlassian.net/browse/PW-790
+ * https://prowide.atlassian.net/browse/PW-919
  */
 public class SplitMT537Message {
 

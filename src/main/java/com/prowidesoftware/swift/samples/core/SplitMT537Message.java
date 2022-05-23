@@ -1,6 +1,5 @@
 package com.prowidesoftware.swift.samples.core;
 
-import com.prowidesoftware.swift.io.RJEReader;
 import com.prowidesoftware.swift.model.SwiftBlock4;
 import com.prowidesoftware.swift.model.SwiftTagListBlock;
 import com.prowidesoftware.swift.model.mt.mt5xx.MT537;
@@ -22,7 +21,6 @@ public class SplitMT537Message {
     public static void main(String args[]) throws IOException {
         //Parse the original large input MT537
         String mt537String = Lib.readResource("MT537_large.fin");
-        //RJEReader reader = new RJEReader(Lib.readResource("mt103.rje", null));
         MT537 originalMT537 = MT537.parse(mt537String);
 
         //Message greater than 10k split

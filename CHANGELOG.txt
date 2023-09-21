@@ -1,5 +1,8 @@
+2023 September
+* Update to SRU2022-9.1.18
+
 2020 October
-* UPdate to SRU2020-9.1.2
+* Update to SRU2020-9.1.2
 
 2019 October
 * Update to SRU2019-8.0.1

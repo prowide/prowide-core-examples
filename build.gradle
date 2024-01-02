@@ -7,5 +7,5 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.prowidesoftware:pw-swift-core:SRU2022-9.3.18'
+    implementation 'com.prowidesoftware:pw-swift-core:SRU2023-10.1.13'
 }

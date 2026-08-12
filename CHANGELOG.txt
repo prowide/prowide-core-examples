@@ -1,0 +1,18 @@
+2023 September
+* Update to SRU2022-9.1.18
+
+2020 October
+* Update to SRU2020-9.1.2
+
+2019 October
+* Update to SRU2019-8.0.1
+
+2019 May
+* Update to 7.10.4
+
+2018 October
+* Update to SRU2018
+
+2018 April
+* Project migrated to Gradle
+* updated dependencies to latest Core release (7.9.7)
